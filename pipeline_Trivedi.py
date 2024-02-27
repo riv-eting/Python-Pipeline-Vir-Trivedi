@@ -2,6 +2,7 @@ import Bio
 import os
 import glob
 from Bio import Entrez
+open('PipelineProject.log', 'w')
 inpath = '/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX*.fastq'
 fastqs = glob.glob(inpath)
 #x is a list of all fastq paths from the directory being used
@@ -36,7 +37,6 @@ for label in fastq_labels:
     for second in twos:
         if second[-18:-8] == f'{label}':
             b = second
-    print(a, b)
 '''
 for label in fastq_labels:
     for path in fastqs:
