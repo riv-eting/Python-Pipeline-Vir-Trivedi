@@ -37,6 +37,7 @@ for label in fastq_labels:
     for second in twos:
         if second[-18:-8] == f'{label}':
             b = second
+    os.system('bowtie2 -x HCMV -1 ' + a + ' -2 ' + b + ' -S ' + label + '.sam --al-conc-gz ' + label + '_mapped_%.fq.gz')
 '''
 for label in fastq_labels:
     for path in fastqs:
