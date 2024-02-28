@@ -5,6 +5,7 @@ from Bio import Entrez
 from Bio import SeqIO
 log=open('PipelineProject.log', 'w')
 inpath = '/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX*.fastq'
+prepath = '/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/'
 fastqs = glob.glob(inpath)
 #x is a list of all fastq paths from the directory being used
 fastq_labels=[]
@@ -62,4 +63,4 @@ with open(fastq_file, "r") as handle:
             count += 1
     return count
 '''
-os.system('spades.py --only-assembler --pe1-1 -o pipeline_outputs/')
+os.system('spades.py --only-assembler --pe1-1 SRX2896360_mapped_1.fq.gz --pe1-2 SRX2896360_mapped_2.fq.gz --pe2-1 SRX2896363_mapped_1.fq.gz --pe2-2 SRX2896363_mapped_2.fq.gz --pe3-1 SRX2896374_mapped_1.fq.gz --pe3-2 SRX2896374_mapped_2.fq.gz --pe4-1 SRX2896375_mapped_1.fq.gz --pe4-2 SRX2896375_mapped_2.fq.gz -o PipelineProject_Vir_Trivedi/')
