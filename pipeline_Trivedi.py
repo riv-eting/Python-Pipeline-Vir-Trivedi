@@ -41,15 +41,4 @@ for label in fastq_labels:
     os.system('bowtie2 -x HCMV -1 ' + a + ' -2 ' + b + ' -S ' + label + '.sam --al-conc-gz ' + label + '_mapped_%.fq.gz')
 #This next set of nested for loops above iterates over the SRA sequence labels and checks them with the ones and twos lists generated prior
 #After identifying the corresponding fastq file in each list, _1.fastq is assigned to variable 'a' and _2.fastq is assigned to variable 'b'
-#For each 'a' and 'b' pair, bowtie 2 is run --> as a result, bowtie 2 is run for the paired end fastq files of each separate sequence downloaded
-'''
-for label in fastq_labels:
-    for path in fastqs:
-        if path[-18:-6] == f'{label}_1':
-            ones.append(path)
-for label in fastq_labels:
-    for path in fastqs:
-        if path[-18:-6] == f'{label}_2':
-            twos.append(path)
-'''
-#Writing donor 1 and donor 3??? No idea how to make that happen          
+#For each 'a' and 'b' pair, bowtie 2 is run --> as a result, bowtie 2 is run for the paired end fastq files of each separate sequence downloaded          
