@@ -1,0 +1,11 @@
+
+=== Error correction and assembling warnings:
+ * 0:02:24.804   652M / 8268M WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 2
+ * 0:02:24.806   652M / 8268M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 2
+ * 0:02:52.360   670M / 8579M WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 3
+ * 0:02:52.362   670M / 8579M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 3
+ * 0:04:16.233   983M / 8806M WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 7
+ * 0:04:16.236   983M / 8806M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 7
+ * 0:06:23.122  1040M / 8799M WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 4
+ * 0:06:23.124  1040M / 8799M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 4
+======= Warnings saved to /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/warnings.log

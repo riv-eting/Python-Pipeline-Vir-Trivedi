@@ -1,0 +1,28 @@
+- "left reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896360_mapped_1.fq.gz"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896360_mapped_2.fq.gz"
+  "type": "paired-end"
+- "left reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896363_mapped_1.fq.gz"
+  "number": !!int "2"
+  "orientation": "fr"
+  "right reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896363_mapped_2.fq.gz"
+  "type": "paired-end"
+- "left reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896374_mapped_1.fq.gz"
+  "number": !!int "3"
+  "orientation": "fr"
+  "right reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896374_mapped_2.fq.gz"
+  "type": "paired-end"
+- "left reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896375_mapped_1.fq.gz"
+  "number": !!int "4"
+  "orientation": "fr"
+  "right reads":
+  - "/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX2896375_mapped_2.fq.gz"
+  "type": "paired-end"

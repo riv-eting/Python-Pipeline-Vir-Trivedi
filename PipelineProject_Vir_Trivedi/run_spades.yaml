@@ -1,0 +1,105 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K21
+  args:
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K21/configs/config.info
+  config_dir: K21
+  del_after: []
+  output_files: []
+  path: /usr/local/bin/spades-core
+  short_name: k21
+- STAGE: K33
+  args:
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K33/configs/config.info
+  config_dir: K33
+  del_after: []
+  output_files: []
+  path: /usr/local/bin/spades-core
+  short_name: k33
+- STAGE: K55
+  args:
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K55/configs/config.info
+  config_dir: K55
+  del_after: []
+  output_files: []
+  path: /usr/local/bin/spades-core
+  short_name: k55
+- STAGE: K77
+  args:
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/configs/config.info
+  config_dir: K77
+  del_after: []
+  output_files: []
+  path: /usr/local/bin/spades-core
+  short_name: k77
+- STAGE: Copy files
+  args:
+  - /usr/local/share/spades/spades_pipeline/scripts/copy_files.py
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/before_rr.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/before_rr.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/assembly_graph_after_simplification.gfa
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/assembly_graph_after_simplification.gfa
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/final_contigs.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/contigs.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/first_pe_contigs.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/first_pe_contigs.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/strain_graph.gfa
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/strain_graph.gfa
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/scaffolds.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/scaffolds.fasta
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/scaffolds.paths
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/scaffolds.paths
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/assembly_graph_with_scaffolds.gfa
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/assembly_graph_with_scaffolds.gfa
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/assembly_graph.fastg
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/assembly_graph.fastg
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/final_contigs.paths
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_txcpq6mp
+  output_files: []
+  path: /usr/bin/python
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /usr/local/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/scaffolds.fasta
+  - --misc_dir
+  - /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /usr/bin/python
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  output_files: []
+  path: 'true'
+  short_name: terminate
