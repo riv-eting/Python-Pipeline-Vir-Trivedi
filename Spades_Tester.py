@@ -10,7 +10,17 @@ fastq_labels=[]
 for path in fastqs:
     fastq_labels.append(path[-18:-8])
 fastq_labels=set(fastq_labels)
+fastq_donor_dict = {}
 print(fastq_labels)
+for label in fastq_labels:
+    if label == 'SRX2896375':
+        fastq_donor_dict[label]='Donor 3 (6dpi)'
+    elif label == 'SRX2896363':
+        fastq_donor_dict[label]='Donor 1 (6dpi)'
+    elif label == 'SRX2896360':
+        fastq_donor_dict[label]='Donor 1 (2dpi)'
+    elif label == 'SRX2896374':
+        fastq_donor_dict[label]='Donor 3 (2dpi)'
 
 mapped = glob.glob('/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX*_mapped*.fq.gz')
 cool = 'spades.py -k 77,99,127 -t 2 --only-assembler -1 SRR5364281_1.fastq -2 SRR5364281_2.fastq -o SRR5364281_assembly/'
