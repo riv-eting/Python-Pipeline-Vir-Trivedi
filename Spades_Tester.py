@@ -56,7 +56,7 @@ for label in fastq_labels:
                     count_2 += 1
             '''
     #print(f'{fastq_donor_dict[label]} had {precount_1 + precount_2} reads before Bowtie2 filtering and {count_1 + count_2} read pairs after.')
-    #ASK WHEELER
+    #ASK ABOUT IN LAB/CLASS
 '''
 with open(fastq_file, "r") as handle:
         for record in SeqIO.parse(handle, "fastq"):
