@@ -40,6 +40,7 @@ for label in fastq_labels:
         if second[-18:-8] == f'{label}':
             b = second
     os.system('bowtie2 -x HCMV -1 ' + a + ' -2 ' + b + ' -S ' + label + '.sam --al-conc-gz ' + label + '_mapped_%.fq.gz')
+    #--met-file /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/ --> Something to consider...
 #This next set of nested for loops above iterates over the SRA sequence labels and checks them with the ones and twos lists generated prior
 #After identifying the corresponding fastq file in each list, _1.fastq is assigned to variable 'a' and _2.fastq is assigned to variable 'b'
 #For each 'a' and 'b' pair, bowtie 2 is run --> as a result, bowtie 2 is run for the paired end fastq files of each separate sequence downloaded          
