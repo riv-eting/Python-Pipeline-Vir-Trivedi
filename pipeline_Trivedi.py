@@ -5,6 +5,7 @@ from Bio import Entrez
 from Bio import SeqIO
 log=open('PipelineProject.log', 'w')
 inpath = '/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX*.fastq'
+prepath = '/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/'
 fastqs = glob.glob(inpath)
 #x is a list of all fastq paths from the directory being used
 print(fastqs)
