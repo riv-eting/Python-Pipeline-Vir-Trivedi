@@ -2,7 +2,8 @@ import Bio
 import os
 import glob
 from Bio import Entrez
-open('PipelineProject.log', 'w')
+from Bio import SeqIO
+log=open('PipelineProject.log', 'w')
 inpath = '/home/vtrivedi1/Python-Pipeline-Vir-Trivedi/SRX*.fastq'
 fastqs = glob.glob(inpath)
 #x is a list of all fastq paths from the directory being used
@@ -14,7 +15,6 @@ fastq_labels=set(fastq_labels)
 print(fastq_labels)
 #The above loop iterates over each of the file paths stored in fastqs and isolates their specific SRX identity sequences in a set
 #This set will allow us to isolate paired fastq files and run them through bowtie
-#Below, we enter the bowtie space :D
 Entrez.email='vtrivedi1@luc.edu'
 ID = 'NC_006273.2'
 handle=Entrez.efetch(db='nucleotide',id=ID,rettype='fasta',retmode='text')
