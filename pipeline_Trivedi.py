@@ -30,6 +30,7 @@ for path in fastqs:
         ones.append(path)
     if path[-7]=='2':
         twos.append(path)
+#The above loop iterates over the file paths inputted for the SRA fastq files and sorts them into two separate lists depending on whether they contain '_1' or '_2'. This separates the first fastq and second fastq of a pair of fastqs for one sequence
 for label in fastq_labels:
     for first in ones:
         if first[-18:-8] == f'{label}':
@@ -38,6 +39,9 @@ for label in fastq_labels:
         if second[-18:-8] == f'{label}':
             b = second
     os.system('bowtie2 -x HCMV -1 ' + a + ' -2 ' + b + ' -S ' + label + '.sam --al-conc-gz ' + label + '_mapped_%.fq.gz')
+#This next set of nested for loops above iterates over the SRA sequence labels and checks them with the ones and twos lists generated prior
+#After identifying the corresponding fastq file in each list, _1.fastq is assigned to variable 'a' and _2.fastq is assigned to variable 'b'
+#For each 'a' and 'b' pair, bowtie 2 is run --> as a result, bowtie 2 is run for the paired end fastq files of each separate sequence downloaded
 '''
 for label in fastq_labels:
     for path in fastqs:
