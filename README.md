@@ -23,8 +23,4 @@ As the code runs, during the BLAST+ portion, you may find that you are asked if 
 
 Upon completion of the script, you can check the log file made inside of the PipelineProject_Vir_Trivedi directory housed in Python-Pipeline-Vir-Trivedi.
 
-WARNING: You may feel something like below once you have finished running all the code:
-
-![Alt Text](https://giphy.com/gifs/paper-triangles-yes-sure-approve-mCIjCgs3nWQWfJZvPA/giphy.gif)
-
 
