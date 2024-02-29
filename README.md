@@ -18,12 +18,13 @@ python {the parent directory that contains the cloned repository}/Python-Pipelin
 ^^Important to note: your --input should either be sampledata or fulldata. By inputting sampledata, the script will call the sampledata directory and use the sample fastq files (these only contain the first 10000 reads of the original fastq files found in fulldata.
 
 As the code runs, during the BLAST+ portion, you may find that you are asked if you are willing to replace certain files. The answer is always yes.
+
 <img width="728" alt="image" src="https://github.com/riv-eting/Python-Pipeline-Vir-Trivedi/assets/118252671/4663979d-f400-4775-bce8-e9c500dc0fcb">
 
 Upon completion of the script, you can check the log file made inside of the PipelineProject_Vir_Trivedi directory housed in Python-Pipeline-Vir-Trivedi.
 
 WARNING: You may feel something like below once you have finished running all the code:
 
-![Alt Text](https://giphy.com/gifs/paper-triangles-yes-sure-approve-mCIjCgs3nWQWfJZvPA)
+![Alt Text](https://giphy.com/gifs/paper-triangles-yes-sure-approve-mCIjCgs3nWQWfJZvPA/giphy.gif)
 
 
