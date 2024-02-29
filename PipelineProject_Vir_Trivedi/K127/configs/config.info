@@ -7,7 +7,7 @@
 #include "tsa.info"
 #include "pe_params.info"
 
-K 77
+K 127
 ;FIXME introduce isolate mode
 mode base
 
@@ -15,13 +15,13 @@ dataset /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/
 log_filename    log.properties
 
 output_base /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi
-tmp_dir /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/tmp/spades_9zn7y0cv
+tmp_dir /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/tmp/spades_r2e1r6qn
 
 main_iteration true
 ; iterative mode switcher, activates additional contigs usage
-use_additional_contigs true
-additional_contigs /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K55/simplified_contigs
-load_from /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K77/saves
+use_additional_contigs false
+additional_contigs	tmp_contigs.fasta
+load_from /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/K127/saves
 
 ; Multithreading options
 temp_bin_reads_dir	.bin_reads/

@@ -15,7 +15,7 @@ dataset /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/
 log_filename    log.properties
 
 output_base /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi
-tmp_dir /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/tmp/spades_txcpq6mp
+tmp_dir /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/tmp/spades_9zn7y0cv
 
 main_iteration false
 ; iterative mode switcher, activates additional contigs usage
