@@ -9,7 +9,8 @@ Firstly, you must download the modules argparse, sys, BioPython, Entrez, os, sub
 
 Included in this repository is a python script titled "wrapper.py". This is the wrapper script that you will be using to run the whole pipeline in one go. Pretty nifty, right?
 
-Running this script is pretty simple and can be done via the command line by entering 
+Running this script is pretty simple and can be done via the command line by entering:
+
 '''
 python {the parent directory that contains the cloned repository}/Python-Pipeline-Vir-Trivedi/wrapper.py --input {insert filepath here}
 '''
