@@ -17,4 +17,4 @@ python {the parent directory that contains the cloned repository}/Python-Pipelin
 
 ^^Important to note: your --input should either be sampledata or fulldata. By inputting sampledata, the script will call the sampledata directory and use the sample fastq files (these only contain the first 10000 reads of the original fastq files found in fulldata.
 
-
+Best of luck and have fun!
