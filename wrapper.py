@@ -94,7 +94,7 @@ for label in fastq_labels:
         #Then, using subprocess.check_output, we check the line count in the file by using wc -l as a bash command through subprocess
         #This command's result is assigned to a count_1 variable that is then converted into a string that contains the line count and file path in one string separated by a space
         #To isolate the line count, .split(' ') is used to create a two item list of strings, and the first item (the count) is isolated, divided by 4, and assigned to the count_1 variable
-    log.write(f'{fastq_donor_dict[label]} had {precount_1 + precount_2} reads before Bowtie2 filtering and {count_1 + count_2} read pairs after.\n')
+    log.write(f'{fastq_donor_dict[label]} had {precount_1} reads before Bowtie2 filtering and {count_1} read pairs after.\n')
     #For each label iterated over, 4 fastq files are identified. To receive the total number of reads prior to mapping we add precount_1 and precount_2 --> these are the read counts from the original fastq files determined among the first two if statements in the inner loop
     #To receive the total number of reads after mapping, we add count_1 and count_2, which are the read counts of the mapped fastq files
     #These sums are inputted into a format string that writes to our log file how many original reads and mapped reads there were per donor/dpi pair
