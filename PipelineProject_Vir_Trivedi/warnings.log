@@ -1,6 +1,0 @@
-
-=== Error correction and assembling warnings:
- * 0:00:06.816    10M / 96M   WARN    General                 (kmer_coverage_model.cpp   : 218)   Too many erroneous kmers, the estimates might be unreliable
- * 0:00:10.382    10M / 96M   WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 4
- * 0:00:10.383    10M / 96M   WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 4
-======= Warnings saved to /home/vtrivedi1/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/warnings.log
