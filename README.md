@@ -17,7 +17,7 @@ Once you have done that, use the command:
 cd Python-Pipeline-Vir-Trivedi
 '''
 
-In order to procure the transcriptome data, enter the following into the command line:
+In order to procure the transcriptome data, enter each of the following commands into the command line:
 
 '''
 wget https://www.ncbi.nlm.nih.gov/sra/SRX2896360
@@ -31,7 +31,7 @@ wget https://www.ncbi.nlm.nih.gov/sra/SRX2896375
 
 Each retrived file is simplt titled the respective SRX accession number
 After this, you can use fasterq-dump to create paired end fastq files for each sequence
-Run the following commands to do so:
+Run the following commands one by one to do so in the command line:
 
 '''
 fasterq-dump SRX2896360
