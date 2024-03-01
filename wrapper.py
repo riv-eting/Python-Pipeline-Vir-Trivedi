@@ -69,9 +69,7 @@ host=os.getcwd()
 #We re define host as the current working directory to implement in future paths
 for label in fastq_labels:
     precount_1=0
-    precount_2=0
     count_1=0
-    count_2=0
     #This first for loop iterates over the labels in fastq_labels --> we will then search total_reads to find all mapped fastq and original fastq files
     #We establish two precount values to be used to track the number of reads in each original fastq file
     #We establish two count values to be used to track the number of reads in each mapped fastq file
@@ -81,36 +79,28 @@ for label in fastq_labels:
             with open(file, 'r') as f1:
                 lines=f1.readlines()
                 precount_1 = (len(lines)/4)
-        if file == f'{host}/Python-Pipeline-Vir-Trivedi/sampledata/sample_{label}_2.fastq':
-            with open(file, 'r') as f2:
-                lines=f2.readlines()
-                precount_2 = (len(lines)/4)
-        #The above if statements check to see if the file from total_reads matches either the forward end (_1) or reverse end (_2) of which ever label the outer loop is iterating over
+        #The above if statements check to see if the file from total_reads matches the forward end (_1) of which ever label the outer loop is iterating over
         #Here, the lines are counted in each identified file by opening the file as a text file and creating a variable of readlines associated with it
         #If it matches one of them, the associated precount variable is updated to reflect the number of reads from that file by taking the number of lines in the file and dividing by 4
         #We divide by 4 because each read in a fastq file is represented by 4 lines (identifier, sequence, phred quality score, and a comment line)
+        #It is okay to use only the forward end because both the forward and reverse contain all associated sequences with the label id
         if file == f'{host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_{label}_mapped_1.fq':
             command = f'wc -l {file}'
             count_1 = subprocess.check_output(command, shell=True, universal_newlines=True)
             count_1 = str(count_1)
             c_1 = count_1.split(' ')
             count_1 = (int(c_1[0]))/4
-        if file == f'{host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_{label}_mapped_2.fq':
-            command = f'wc -l {file}'
-            count_2 = subprocess.check_output(command, shell=True, universal_newlines=True)
-            count_2 = str(count_2)
-            c_2 = count_2.split(' ')
-            count_2 = (int(c_2[0]))/4
-        #The above two if statements are used to identify if any of the files iterated over match the mapped fastq files corresponding to which ever label the outer loop is iterating over at the moment
+        #The above if statement is used to identify if any of the files iterated over match the mapped fastq files corresponding to which ever label the outer loop is iterating over at the moment
         #Then, using subprocess.check_output, we check the line count in the file by using wc -l as a bash command through subprocess
-        #This command's result is assigned to a count_* variable that is then converted into a string that contains the line count and file path in one string separated by a space
-        #To isolate the line count, .split(' ') is used to create a two item list of strings, and the first item (the count) is isolated, divided by 4, and assigned to the count_* variable
+        #This command's result is assigned to a count_1 variable that is then converted into a string that contains the line count and file path in one string separated by a space
+        #To isolate the line count, .split(' ') is used to create a two item list of strings, and the first item (the count) is isolated, divided by 4, and assigned to the count_1 variable
     log.write(f'{fastq_donor_dict[label]} had {precount_1 + precount_2} reads before Bowtie2 filtering and {count_1 + count_2} read pairs after.\n')
     #For each label iterated over, 4 fastq files are identified. To receive the total number of reads prior to mapping we add precount_1 and precount_2 --> these are the read counts from the original fastq files determined among the first two if statements in the inner loop
     #To receive the total number of reads after mapping, we add count_1 and count_2, which are the read counts of the mapped fastq files
     #These sums are inputted into a format string that writes to our log file how many original reads and mapped reads there were per donor/dpi pair
     #The donor/dpi pair is retrieved by using the label iterated over in the outer loop as an index for the dictionary made in lines 53-61
 os.system(f'spades.py -k 127 --only-assembler --pe1-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896360_mapped_1.fq --pe1-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896360_mapped_2.fq --pe2-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896363_mapped_1.fq --pe2-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896363_mapped_2.fq --pe3-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896374_mapped_1.fq --pe3-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896374_mapped_2.fq --pe4-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896375_mapped_1.fq --pe4-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896375_mapped_2.fq -o {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/')
+log.write(f'spades.py -k 127 --only-assembler --pe1-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896360_mapped_1.fq --pe1-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896360_mapped_2.fq --pe2-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896363_mapped_1.fq --pe2-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896363_mapped_2.fq --pe3-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896374_mapped_1.fq --pe3-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896374_mapped_2.fq --pe4-1 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896375_mapped_1.fq --pe4-2 {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/sample_SRX2896375_mapped_2.fq -o {host}/Python-Pipeline-Vir-Trivedi/PipelineProject_Vir_Trivedi/')
 #The above os.system call runs SPades to assemble a genome using all 8 mapped fastq files by referencing their paths
 #All output of SPades is sent to the PipelineProject_Vir_Trivedi directory
 above_thousand = 0
